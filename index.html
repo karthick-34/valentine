@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="cointainer">
+        <div class="cointainer__header">
+            <h1>Will You be Mine?🥺🥺</h1>
+            <img src="./images/giphy.gif" alt="">
+            <p id="message"></p>
+            <div class="cointainer__btn">
+                <button class="yes-btn">Yes</button>
+                <button class="no-btn" onclick="changeMessage()">No</button>
+            </div>
+        </div>
+       
+
+    </div>
+
+    <script>
+        function changeMessage() {
+            var messages = [
+                "Are you sure?",
+                "Really sure?",
+                "Think again",
+                "Last Chance",
+                "Surely not",
+                "You will regret it later",
+                "Give it another thought"
+            ];
+            var randomIndex = Math.floor(Math.random() * messages.length);
+            document.getElementById("message").textContent = messages[randomIndex];
+            increaseSize();
+        }
+
+        function increaseSize() {
+            var yesBtn = document.querySelector('.yes-btn');
+            var currentWidth = yesBtn.offsetWidth;
+            var currentHeight = yesBtn.offsetHeight;
+            var currentFontSize = parseInt(window.getComputedStyle(yesBtn).fontSize);
+            var newWidth = currentWidth * 1.1; // Increase width by 10%
+            var newHeight = currentHeight * 1.1; // Increase height by 10%
+            var newFontSize = currentFontSize * 1.1; // Increase font size by 10%
+            yesBtn.style.width = newWidth + 'px';
+            yesBtn.style.height = newHeight + 'px';
+            yesBtn.style.fontSize = newFontSize + 'px';
+        }
+    </script>
+
+</body>
+
+</html>
