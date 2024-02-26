@@ -12,14 +12,14 @@
     <div class="cointainer">
         <div class="cointainer__header">
             <h1>Will You be Mine?🥺🥺</h1>
-            <img src="./images/giphy.gif" alt="">
+            <img id="panda-img" src="./images/giphy.gif" alt="">
             <p id="message"></p>
             <div class="cointainer__btn">
-                <button class="yes-btn">Yes</button>
+                <button class="yes-btn" onclick="changeContent()">Yes</button>
                 <button class="no-btn" onclick="changeMessage()">No</button>
             </div>
         </div>
-       
+
 
     </div>
 
@@ -50,6 +50,25 @@
             yesBtn.style.width = newWidth + 'px';
             yesBtn.style.height = newHeight + 'px';
             yesBtn.style.fontSize = newFontSize + 'px';
+        }
+
+        function changeContent() {
+            var img = document.getElementById("panda-img");
+            img.src = "./images/gip.gif"; // Replace with the path of another image
+
+            // Update h1 tag
+            var h1 = document.querySelector('h1');
+            h1.textContent = "Love You Too 💛💛";
+
+            // Update p tag
+            var p = document.getElementById("message");
+            p.textContent = "Message";
+
+            // Remove buttons
+            var buttonsContainer = document.querySelector('.container__btn');
+            buttonsContainer.innerHTML = ''; // Remove all content inside the container
+          
+            // Increase image width
         }
     </script>
 
